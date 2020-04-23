@@ -41,6 +41,9 @@ class GoogleTrans(object):
         
         with open('token.js', 'r', encoding='utf-8') as f:  
             self.js_fun = execjs.compile(f.read())
+
+        # 构建完对象以后要同步更新一下TKK值
+        # self.update_TKK()  
     
     
     def update_TKK(self):
@@ -60,30 +63,22 @@ class GoogleTrans(object):
         base = base[:-1]
         return base
     
-    def query(self, q, lang_from = '', lang_to = ''):
-        print("lang_to={}".format(lang_to))
+    def query(self, q, lang_to=''): 
         self.data['q'] = urllib.parse.quote(q)
-        self.data['tk'] = self.js_fun.call('wo', q, self.TKK)
-        if lang_from:
-            self.data['sl'] = lang_from
-        if lang_to:
-            self.data['tl'] = lang_to
+        self.data['tk'] = self.js_fun.call('wo', q, self.TKK) 
+        self.data['tl'] = lang_to
         url = self.construct_url()
         req = urllib.request.Request(url=url, headers=self.header)
         response = json.loads(urllib.request.urlopen(req).read().decode("utf-8"))
         targetText = response[0][0][0]
         originalText = response[0][0][1]
         originalLanguageCode = response[2]
-        print("targetText={}, targetLanguageCode={}, \r\noriginalText={}, originalLanguageCode={}".format(targetText, lang_to, originalText, originalLanguageCode))
+        print("翻译前：{}，翻译前code：{}".format(originalText, originalLanguageCode))
+        print("翻译后：{}, 翻译后code：{}".format(targetText, lang_to))
 
 
 if __name__ == '__main__':
-    googletrans = GoogleTrans()
-    googletrans.update_TKK()  # 构建完对象以后要同步更新一下TKK值
-    while True:
-        q = input("请输入您想要翻译的内容(直接回车退出程序)：")
-        if q:
-            googletrans.query(q)  # 默认的目标语言是英语，如果要翻译到其他语言请自行修改相应参数
-        else:
-            print("程序退出！")
-            break
+    text = "Hello world"
+    GoogleTrans().query(text, lang_to='zh-CN')  
+
+
