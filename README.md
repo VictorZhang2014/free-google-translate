@@ -20,8 +20,9 @@ GoogleTrans().query(text, lang_to='zh-CN')
 # iOS Objective-C使用
 ```objective-c
 NSString *content = @"Hello world";
+NSString *targetLanguage = @"zh-CN";
 YLGoogleTranslate *googleTrans = [[YLGoogleTranslate alloc] init];
-[googleTrans translateWithText:content targetLanguageCode:_targetLanguage completion:^(NSString * _Nullable originalText, NSString * _Nullable originalLanguageCode, NSString * _Nullable translatedText, NSString * _Nullable targetLanguageCode, NSString * _Nullable error) {
+[googleTrans translateWithText:content targetLanguageCode:targetLanguage completion:^(NSString * _Nullable originalText, NSString * _Nullable originalLanguageCode, NSString * _Nullable translatedText, NSString * _Nullable targetLanguageCode, NSString * _Nullable error) {
     if ([error length] > 0) {
         NSLog(@"调用Google翻译接口返回错误：%@ ", error); 
     } else {
