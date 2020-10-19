@@ -112,7 +112,7 @@ public class GoogleTranslateUtil {
 
     public String getTKK(String q) {
         try {
-            String tkkUrl = "http://xxx" + q;
+            String tkkUrl = "https://api.yooul.net" + q;
             String req = sendGet(tkkUrl);
             tkk = new JSONObject(req).getString("token");
         } catch (Exception e) {
