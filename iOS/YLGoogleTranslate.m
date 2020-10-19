@@ -82,7 +82,7 @@
 - (void)getTokenWithText:(NSString *)text completion:(void (^)(NSString * _Nullable tokenData, NSString * _Nullable error))completionHandler {
     // 获取google翻译接口的token
     NSString *_tkk = [[self.TKK stringByReplacingOccurrencesOfString:@"'" withString:@""] stringByReplacingOccurrencesOfString:@"tkk:" withString:@""];
-    NSString *url = [NSString stringWithFormat:@"http://192.168.1.1:8080/api/google/token?text=%@&tkk=%@", [text urlencode], _tkk];
+    NSString *url = [NSString stringWithFormat:@"https://api.yooul.net/api/google/token?text=%@&tkk=%@", [text urlencode], _tkk];
     [self requestWithUrl:url method:@"GET" header:nil completionHandler:^(NSData * _Nullable respData, NSError * _Nullable error) {
         if (error) {
             completionHandler(nil, error.localizedDescription);
