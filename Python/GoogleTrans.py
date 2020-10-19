@@ -75,10 +75,13 @@ class GoogleTrans(object):
         originalLanguageCode = response[2]
         print("翻译前：{}，翻译前code：{}".format(originalText, originalLanguageCode))
         print("翻译后：{}, 翻译后code：{}".format(targetText, lang_to))
+        return originalText, originalLanguageCode, targetText, lang_to
 
 
 if __name__ == '__main__':
     text = "Hello world"
-    GoogleTrans().query(text, lang_to='zh-CN')  
+    originalText, originalLanguageCode, targetText, targetLanguageCode = GoogleTrans().query(text, lang_to='zh-CN')  
+    print(originalText, originalLanguageCode, targetText, targetLanguageCode)
+    
 
 
