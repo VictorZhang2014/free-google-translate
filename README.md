@@ -1,4 +1,7 @@
-# free-google-translate
+# Free Google Translator
+
+[![Generic badge](https://img.shields.io/badge/mit.svg)](https://shields.io/)
+
 Free Google Translate is a tool for google free translation API, the main idea of the repo is coming from the web `https://translate.google.cn` translation, we use a hacking way to access the web translation api for translating text.
 
 
