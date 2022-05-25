@@ -170,7 +170,7 @@ class GoogleTrans(object):
         return base
     
     def query(self, q, lang_to=''):
-        q = re.sub('''[^\u2E80-\u9FFF \n\t\w_.!'"`+-=——,$%^，。？、~@#￥%……|[\]&\\*《》<>「」{}【】()/]''', '', q)
+        q = re.sub('''[^\u2E80-\u9FFF \n\t\w_.!'"“”`+-=——,$%^，。？、~@#￥%……|[\]&\\*《》<>「」{}【】()/]''', '', q)
         retry = 3
         while retry > 0:
             try:
