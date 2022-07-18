@@ -63,19 +63,31 @@ class GoogleTrans(object):
         base = base[:-1]
         return base
     
-    def query(self, q, lang_to=''): 
-        self.data['q'] = urllib.parse.quote(q)
-        self.data['tk'] = self.js_fun.call('wo', q, self.TKK) 
-        self.data['tl'] = lang_to
-        url = self.construct_url()
-        req = urllib.request.Request(url=url, headers=self.header)
-        response = json.loads(urllib.request.urlopen(req).read().decode("utf-8"))
-        targetText = response[0][0][0]
-        originalText = response[0][0][1]
-        originalLanguageCode = response[2]
-        print("翻译前：{}，翻译前code：{}".format(originalText, originalLanguageCode))
-        print("翻译后：{}, 翻译后code：{}".format(targetText, lang_to))
-        return originalText, originalLanguageCode, targetText, lang_to
+    def query(self, q, lang_to=''):
+        q = re.sub('''[^\u2E80-\u9FFF \n\t\w_.!'"“”`+-=——,$%^，。？、~@#￥%……|[\]&\\*《》<>「」{}【】()/]''', '', q)
+        retry = 3
+        while retry > 0:
+            try:
+                self.data['q'] = urllib.parse.quote(q)
+                self.data['tk'] = self.JSHackToken().wo(q, self.TKK)
+                self.data['tl'] = lang_to
+                url = self.construct_url()
+                robj = requests.post(url)
+                response = json.loads(robj.text)
+                targetText = ''
+                for item in response[0]:
+                    if item[0]:
+                        targetText += item[0]
+                originalText = response[0][0][1]
+                originalLanguageCode = response[2]
+                print("翻译前：{}，翻译前code：{}".format(originalText, originalLanguageCode))
+                print("==============================")
+                print("翻译后：{}, 翻译后code：{}".format(targetText, lang_to))
+                return originalText, originalLanguageCode, targetText, lang_to
+            except Exception as e:
+                print(e)
+                retry -= 1
+                time.sleep(2)
 
 
 if __name__ == '__main__':
