@@ -26,13 +26,13 @@
 - (instancetype)init {
     self = [super init];
     if (self) {
-        _url = @"https://translate.google.cn/translate_a/single";
+        _url = @"https://translate.google.com.hk/translate_a/single";
         _TKK = @"434674.96463358";  // 随时都有可能需要更新的TKK值
         _header = @{
                         @"accept": @"*/*",
                         @"accept-language": @"zh-CN,zh;q=0.9,en-US;q=0.8,en;q=0.7",
                         @"cookie": @"NID=188=M1p_rBfweeI_Z02d1MOSQ5abYsPfZogDrFjKwIUbmAr584bc9GBZkfDwKQ80cQCQC34zwD4ZYHFMUf4F59aDQLSc79_LcmsAihnW0Rsb1MjlzLNElWihv-8KByeDBblR2V1kjTSC8KnVMe32PNSJBQbvBKvgl4CTfzvaIEgkqss",
-                        @"referer": @"https://translate.google.cn/",
+                        @"referer": @"https://translate.google.com.hk/",
                         @"user-agent": @"Mozilla/5.0 (iPhone; CPU iPhone OS 13_2_3 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0.3 Mobile/15E148 Safari/604.1",
                         @"x-client-data": @"CJK2yQEIpLbJAQjEtskBCKmdygEIqKPKAQi5pcoBCLGnygEI4qjKAQjxqcoBCJetygEIza3KAQ==",
                     };
@@ -55,7 +55,7 @@
 }
 
 - (void)getTKKInCompletion:(void (^)(NSString * _Nullable tkkData, NSString * _Nullable error))completionHandler {
-    NSString *url = @"https://translate.google.cn/";
+    NSString *url = @"https://translate.google.com.hk/";
     [self requestWithUrl:url method:@"GET" header:self.header completionHandler:^(NSData * _Nullable respData, NSError * _Nullable error) {
         if (error) {
             completionHandler(nil, error.localizedDescription);
