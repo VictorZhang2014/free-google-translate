@@ -1,0 +1,7 @@
+
+.DS_Store
+
+NodeJS/node_modules
+NodeJS/pnpm-lock.yaml
+
+Python/.env
