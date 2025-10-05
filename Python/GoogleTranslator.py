@@ -15,14 +15,14 @@ ssl._create_default_https_context = ssl._create_unverified_context
 
 class GoogleTrans(object):
     def __init__(self):
-        self.url = 'https://translate.google.cn/translate_a/single'
+        self.url = 'https://translate.google.com.hk/translate_a/single'
         self.TKK = "434674.96463358"  # 随时都有可能需要更新的TKK值
         
         self.header = {
             "accept": "*/*",
             "accept-language": "zh-CN,zh;q=0.9",
             "cookie": "NID=188=M1p_rBfweeI_Z02d1MOSQ5abYsPfZogDrFjKwIUbmAr584bc9GBZkfDwKQ80cQCQC34zwD4ZYHFMUf4F59aDQLSc79_LcmsAihnW0Rsb1MjlzLNElWihv-8KByeDBblR2V1kjTSC8KnVMe32PNSJBQbvBKvgl4CTfzvaIEgkqss",
-            "referer": "https://translate.google.cn/",
+            "referer": "https://translate.google.com.hk/",
             "user-agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36",
             "x-client-data": "CJK2yQEIpLbJAQjEtskBCKmdygEIqKPKAQi5pcoBCLGnygEI4qjKAQjxqcoBCJetygEIza3KAQ==",
         }
@@ -153,7 +153,7 @@ class GoogleTrans(object):
     
     
     def update_TKK(self):
-        url = "https://translate.google.cn/"
+        url = "https://translate.google.com.hk/"
         req = requests.get(url, headers=self.header)
         page_source = req.text
         self.TKK = re.findall(r"tkk:'([0-9]+\.[0-9]+)'", page_source)[0]
