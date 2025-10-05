@@ -6,7 +6,7 @@
 [![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)](https://www.javascript.com)
 
 
-Free Google Translator is a effective and free tool to translate any language content, the principal idea of the repo comes from the web `https://translate.google.cn` translation, we used a hacking way to access the web translation api for translating text.
+Free Google Translator is an effective and free tool to translate any language content, the principal idea of this repo is from the web `https://translate.google.cn` translation, we used a hacking way to access the web translation api for any text.
 
 
 
