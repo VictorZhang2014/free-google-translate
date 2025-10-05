@@ -4,10 +4,29 @@
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](http://ansicolortags.readthedocs.io/?badge=latest)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)](https://www.javascript.com)
-[![Ask Me Anything !](https://img.shields.io/badge/Ask%20me-anything-1abc9c.svg)](https://GitHub.com/Naereen/ama)
 
-Free Google Translate is a tool for google free translation API, the main idea of the repo is coming from the web `https://translate.google.cn` translation, we use a hacking way to access the web translation api for translating text.
 
+Free Google Translator is a effective and free tool to translate any language content, the principal idea of the repo comes from the web `https://translate.google.cn` translation, we used a hacking way to access the web translation api for translating text.
+
+
+
+# The latest version and No limit to use 
+You can translate any language content to any language content. Free completely.
+```python
+text = "Hello world! I love China very much."
+translator = TranslatorByDeepSeek()
+response = translator.translate(text, source_language="en", target_language="zh")
+print(response)
+```
+The output will be like this:
+```
+{
+  "originalText": "Hello world! I love China very much.",
+  "originalLanguageCode": "en",
+  "targetText": "你好，世界！我非常热爱中国。",
+  "targetLanguageCode": "zh"
+}
+```
 
 # The Do's and Don'ts
 - 1.You will get `429 Too many requests` error if you request so many times simultaneously
@@ -61,6 +80,25 @@ The response data is as same as aforementioned python code.
 
 # free-google-translate
 Free Google Translator API 免费的Google翻译，其中的破解思路主要来源于将 https://translate.google.cn 的web访问方式模拟成全部代码的形式来控制api的访问
+
+# 最新版本-完全无限制的免费使用
+可以从任何语言翻译到任何语言，完全免费。
+```python
+text = "Hello world! I love China very much."
+translator = TranslatorByDeepSeek()
+response = translator.translate(text, source_language="en", target_language="zh")
+print(response)
+```
+输出内容如下
+```
+{
+  "originalText": "Hello world! I love China very much.",
+  "originalLanguageCode": "en",
+  "targetText": "你好，世界！我非常热爱中国。",
+  "targetLanguageCode": "zh"
+}
+```
+
 
 # 注意事项
 - 1.大量的相同IP请求会导致Google翻译接口返回 429 Too many requests 
