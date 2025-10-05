@@ -20,7 +20,7 @@ public class GoogleTranslateUtil {
     private GoogleTranslateUtil() {
     }
 
-    String url = "https://translate.google.cn/translate_a/single";
+    String url = "https://translate.google.com.hk/translate_a/single";
     String tkk = "434674.96463358"; // 随时都有可能需要更新的TKK值
 
     public long uo(long a, String b) {
@@ -82,7 +82,7 @@ public class GoogleTranslateUtil {
             connection.setRequestProperty("accept", "*/*");
             connection.setRequestProperty("accept-language", "zh-CN,zh;q=0.9");
             connection.setRequestProperty("cookie", "NID=188=M1p_rBfweeI_Z02d1MOSQ5abYsPfZogDrFjKwIUbmAr584bc9GBZkfDwKQ80cQCQC34zwD4ZYHFMUf4F59aDQLSc79_LcmsAihnW0Rsb1MjlzLNElWihv-8KByeDBblR2V1kjTSC8KnVMe32PNSJBQbvBKvgl4CTfzvaIEgkqss");
-            connection.setRequestProperty("referer", "https://translate.google.cn/");
+            connection.setRequestProperty("referer", "https://translate.google.com.hk/");
             connection.setRequestProperty("x-client-data", "CJK2yQEIpLbJAQjEtskBCKmdygEIqKPKAQi5pcoBCLGnygEI4qjKAQjxqcoBCJetygEIza3KAQ==");
             connection.setRequestProperty("user-agent",
                     "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/75.0.3770.142 Safari/537.36");
@@ -124,7 +124,7 @@ public class GoogleTranslateUtil {
 
     public String update_TKK() {
         try {
-            String tkkUrl = "https://translate.google.cn/";
+            String tkkUrl = "https://translate.google.com.hk/";
             String req = sendGet(tkkUrl);
             Pattern pattern = Pattern.compile("tkk:'([0-9]+\\.[0-9]+)'");
             Matcher matcher = pattern.matcher(req);
