@@ -33,7 +33,6 @@ The output will be like this:
   - Suggested Solution: To avoid requests in just one IP address, you can put the requesting code in every client (app on device), then it will bypass the IP restriction
 - 2.The api service is unavailable if you send large amount of requests at the same time.
 
-
 # For Python Example
 ```python
 text = "Hello world"
@@ -46,9 +45,6 @@ The output will be:
 Before translating: "Hello world" with target lange code en
 After translating: "你好，世界"
 ```
-
-<br/>
-<br/>
 
 # For Objective-C Example on iOS 
 ```objective-c
@@ -105,7 +101,6 @@ print(response)
    -  建议处理方案：每一个app客户端自己去请求此接口，就可以避免只有一个IP的服务器去请求
 - 2.大量的请求也会使此接口的服务不可用
 
-
 # Python使用
 ```python
 text = "Hello world"
@@ -118,9 +113,6 @@ GoogleTrans().query(text, lang_to='zh-CN')
 翻译前：Hello world，翻译前code：en
 翻译后：你好，世界, 翻译后code：zh-CN
 ```
-
-<br/>
-<br/>
 
 # iOS Objective-C使用
 ```objective-c
@@ -165,6 +157,3 @@ Le résultat sera:
 Avant de traduire  : "Hello world"
 Après la traduction: "Bonjour le monde"
 ```
-
-<br/>
-<br/>
