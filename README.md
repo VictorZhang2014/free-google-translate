@@ -4,14 +4,14 @@
 [![Documentation Status](https://readthedocs.org/projects/ansicolortags/badge/?version=latest)](http://ansicolortags.readthedocs.io/?badge=latest)
 [![made-with-python](https://img.shields.io/badge/Made%20with-Python-1f425f.svg)](https://www.python.org/)
 [![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-1f425f.svg)](https://www.javascript.com)
+[![made-with-ios](https://img.shields.io/badge/Made%20with-iOS-1f425f.svg)](https://developer.apple.com/)
+[![made-with-android](https://img.shields.io/badge/Made%20with-android-1f425f.svg)](https://www.android.com/)
 
-
-Free Google Translator is an effective and free tool to translate any language content, the principal idea of this repo is from the web `https://translate.google.cn` translation, we used a hacking way to access the web translation api for any text.
-
+**Free Google Translator** is an effective and **free tool** for translating content between any languages. The core concept of this repository is derived from the web interface of `https://translate.google.cn`. We employ a **reverse-engineering** approach to access the web translation API for any text. Use it at your own risk.
 
 
 # The latest version and No limit to use 
-You can translate any language content to any language content. Free completely.
+You can translate content from any source language to any target language. Completely free of charge.
 ```python
 text = "Hello world! I love China very much."
 translator = TranslatorByDeepSeek()
@@ -29,7 +29,7 @@ The output will be like this:
 ```
 
 # The Do's and Don'ts
-- 1.You will get `429 Too many requests` error if you request so many times simultaneously
+- 1.You will get `429 Too many requests` error if you send too many simultaneous requests from a single IP address
   - Suggested Solution: To avoid requests in just one IP address, you can put the requesting code in every client (app on device), then it will bypass the IP restriction
 - 2.The api service is unavailable if you send large amount of requests at the same time.
 
@@ -78,7 +78,7 @@ The response data is as same as aforementioned python code.
 
 
 
-# free-google-translate
+# Free Google Translator
 Free Google Translator API 免费的Google翻译，其中的破解思路主要来源于将 https://translate.google.cn 的web访问方式模拟成全部代码的形式来控制api的访问
 
 # 最新版本-完全无限制的免费使用
@@ -138,3 +138,33 @@ YLGoogleTranslate *googleTrans = [[YLGoogleTranslate alloc] init];
 传入一段待翻译的文本，和目标翻译语言code，然后你就会得到翻译结果，该接口会自动识别输入的语言code
 
 
+
+
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+<br/>
+
+
+
+# Traducteur Google Gratuit 
+
+**Traducteur Google Gratuit** est un outil effectif pour traduire de texts entre toutes les langues. Le concept principal de ce repo est dérivé de l'interface Web de `https://translate.google.cn`. Nous employons de manière approche ***rétro-ingénierie** pour accéder l'API traduction Web pour tout les textes. Utilisez-le à vos propres risques.
+
+# L'Exemple de Python
+```python
+text = "Hello world"
+GoogleTrans().query(text, lang_to='fr') 
+```
+Vous pouvez transmettre une chaîne de texte brut accompagnée du code de langue cible, et vous recevrez le texte traduit après la requête. Cette API reconnaîtra automatiquement le texte à partir de la langue source.
+
+Le résultat sera:
+```
+Avant de traduire  : "Hello world"
+Après la traduction: "Bonjour le monde"
+```
+
+<br/>
+<br/>
